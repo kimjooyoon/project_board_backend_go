@@ -1,7 +1,11 @@
 package domain
 
-type Hashtag struct {
-	Id int64
+var _ Hashtag = (*hashtag)(nil)
 
-	Name string
+type Hashtag interface {
+}
+
+type hashtag struct {
+	id   int64
+	name string
 }

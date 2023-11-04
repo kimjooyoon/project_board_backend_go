@@ -1,10 +1,13 @@
 package domain
 
-type Article struct {
-	Id int64
+var _ Article = (*article)(nil)
 
-	UserId int64
+type Article interface {
+}
 
-	Title   string
-	Content string
+type article struct {
+	id      int64
+	userId  int64
+	title   string
+	content string
 }
