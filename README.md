@@ -8,6 +8,22 @@
 - 참조: [프로젝트 레이아웃](https://github.com/golang-standards/project-layout/blob/master/README_ko.md)
 - 참조: [golang ddd 디자인](https://programmingpercy.tech/blog/how-to-domain-driven-design-ddd-golang/)
 
+## BDD
+
+사전 작업
+```shell
+go install github.com/onsi/ginkgo/v2/ginkgo 
+```
+를 설치해주세요
+
+해당 패키지에서 BDD 를 작성하고 싶은 경우
+```shell
+ginkgo bootstrap
+```
+를 입력한 후, 해당 파일의 테스트를 작성합니다
+
+- internal/article/usecase 패키지를 참조해주세요
+
 ### /build
 빌드를 위한 파일을 작성합니다
 
