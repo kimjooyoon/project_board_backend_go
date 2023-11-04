@@ -1,0 +1,10 @@
+with-expecter: true
+packages:
+  project_board_backend/internal/infrastructure/out/maria/article/query:
+    config:
+      all: True
+      recursive: True
+      filename: "mock_{{.InterfaceName}}.go"
+      dir: "internal/mocks/infrastructure/out/maria/article/query"
+      mockname: "Mock{{.InterfaceName}}"
+      outpkg: "mocks_{{.PackageName}}"
