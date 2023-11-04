@@ -2,6 +2,10 @@ package domain
 
 var _ Builder = (*builder)(nil)
 
+func NewArticleBuilder() Builder {
+	return &builder{}
+}
+
 type Builder interface {
 	ID(int64) Builder
 	UserId(int64) Builder
