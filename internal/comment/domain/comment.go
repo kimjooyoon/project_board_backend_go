@@ -1,11 +1,14 @@
 package domain
 
-type ID int64
+var _ Comment = (*comment)(nil)
 
-type Comment struct {
-	Id ID
+type Comment interface {
+}
 
-	ArticleID       int64
-	Commenter       int64 // userAccount
-	ParentCommentID ID
+type comment struct {
+	id int64
+
+	articleID       int64
+	commenter       int64 // userAccount
+	parentCommentID int64
 }
