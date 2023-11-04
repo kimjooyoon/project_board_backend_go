@@ -27,5 +27,8 @@ jobs:
     - name: Set up mocks
       run: make mock
 
+    - name: Set go project
+      run: go mod tidy
+
     - name: Test
       run: go test -v ./...
