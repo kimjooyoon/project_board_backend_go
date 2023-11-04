@@ -1,9 +1,7 @@
 package article
 
-import "project_board_backend/internal/article/domain"
-
 type QueryService interface {
-	SearchUser(name string) (*domain.Article, error)
+	SearchUser(name string) (SearchUserResponse, error)
 }
 
 type CommandService interface {
@@ -16,4 +14,15 @@ type SaveUserRequest struct {
 	Email    string
 	Nickname string
 	Memo     string
+}
+
+type SearchUserResponse struct {
+	List []Article `json:"list"`
+}
+
+type Article struct {
+	ID      string
+	Title   string
+	UserId  string
+	Content string
 }

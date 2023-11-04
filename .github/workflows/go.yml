@@ -19,10 +19,16 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.20'
+        go-version: '1.21'
 
-    - name: Build
-      run: go build -v ./...
+    - name: install mockery
+      run: go install github.com/vektra/mockery/v2@v2.36.0
+
+    - name: Set up mocks
+      run: make mock
+
+    - name: Set go project
+      run: go mod tidy
 
     - name: Test
       run: go test -v ./...
