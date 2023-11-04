@@ -27,8 +27,5 @@ jobs:
     - name: Set up mocks
       run: make mock
 
-    - name: Build
-      run: go build -v ./...
-
     - name: Test
       run: go test -v ./...
