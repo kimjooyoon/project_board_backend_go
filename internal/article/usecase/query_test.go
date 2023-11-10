@@ -3,7 +3,7 @@ package usecase
 import (
 	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/internal/mocks/app/article/repo"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/repo"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/stretchr/testify/mock"
