@@ -1,19 +1,19 @@
 package usecase
 
 import (
-	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/internal/infrastructure/out/maria/article/query"
+	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
+	"github.com/kimjooyoon/project_board_backend_go/internal/article/repo"
 )
 
 var _ article.QueryService = (*articleQueryUseCase)(nil)
 
-func NewArticleQueryUseCase(q query.ArticleQuery) article.QueryService {
+func NewArticleQueryUseCase(q repo.ArticleQuery) article.QueryService {
 	return &articleQueryUseCase{query: q}
 }
 
 type articleQueryUseCase struct {
-	query query.ArticleQuery
+	query repo.ArticleQuery
 }
 
 func (a *articleQueryUseCase) SearchUser(name string) (article.SearchUserResponse, error) {

@@ -3,7 +3,7 @@ package usecase
 import (
 	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/internal/mocks/infrastructure/out/maria/article/query"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/repo"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/stretchr/testify/mock"
@@ -14,13 +14,13 @@ var _ = Describe("articleQueryUseCase", func() {
 	// UseCase Adapter 를 구성하는 환경 변수를 작성합니다
 	var (
 		usecase article.QueryService
-		query   *mocks_query.MockArticleQuery
+		query   *mocksrepo.MockArticleQuery
 	)
 
 	// mockery(make mock 명령어)를 통해 작성된 mock 파일을 제공합니다
 	// usecase 를 초기화 합니다
 	BeforeEach(func() {
-		query = mocks_query.NewMockArticleQuery(GinkgoT())
+		query = mocksrepo.NewMockArticleQuery(GinkgoT())
 		usecase = NewArticleQueryUseCase(query)
 	})
 	// 정의할 행위를 결정합니다
