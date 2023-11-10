@@ -14,13 +14,13 @@ var _ = Describe("articleQueryUseCase", func() {
 	// UseCase Adapter 를 구성하는 환경 변수를 작성합니다
 	var (
 		usecase article.QueryService
-		query   *mocks_query.MockArticleQuery
+		query   *mocksrepo.MockArticleQuery
 	)
 
 	// mockery(make mock 명령어)를 통해 작성된 mock 파일을 제공합니다
 	// usecase 를 초기화 합니다
 	BeforeEach(func() {
-		query = mocks_query.NewMockArticleQuery(GinkgoT())
+		query = mocksrepo.NewMockArticleQuery(GinkgoT())
 		usecase = NewArticleQueryUseCase(query)
 	})
 	// 정의할 행위를 결정합니다

@@ -1,10 +1,10 @@
 with-expecter: true
 packages:
-  github.com/kimjooyoon/project_board_backend_go/internal/infrastructure/out/maria/article/query:
+  github.com/kimjooyoon/project_board_backend_go/internal/app/article/repo:
     config:
       all: True
       recursive: True
       filename: "mock_{{.InterfaceName}}.go"
-      dir: "internal/mocks/infrastructure/article/out/mariadb/query"
+      dir: "internal/mocks/app/article/repo"
       mockname: "Mock{{.InterfaceName}}"
       outpkg: "mocks_{{.PackageName}}"
