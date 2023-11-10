@@ -1,9 +1,9 @@
 package usecase
 
 import (
-	"project_board_backend/internal/app/article"
-	"project_board_backend/internal/article/domain"
-	"project_board_backend/internal/infrastructure/out/maria/article/query"
+	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
+	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
+	"github.com/kimjooyoon/project_board_backend_go/internal/infrastructure/out/maria/article/query"
 )
 
 var _ article.QueryService = (*articleQueryUseCase)(nil)
@@ -17,11 +17,12 @@ type articleQueryUseCase struct {
 }
 
 func (a *articleQueryUseCase) SearchUser(name string) (article.SearchUserResponse, error) {
-	articles := a.query.FindByName(name)
-	return convertSearchUserResponse(articles), nil
+	articles, total := a.query.FindByName(name)
+
+	return convertSearchUserResponse(articles, total, len(articles)), nil
 }
 
-func convertSearchUserResponse(list []domain.Article) article.SearchUserResponse {
+func convertSearchUserResponse(list []domain.Article, total, current int) article.SearchUserResponse {
 	l := make([]article.Article, len(list))
 	for i, d := range list {
 		var vo = d.ToArticleInfo()
@@ -32,7 +33,10 @@ func convertSearchUserResponse(list []domain.Article) article.SearchUserResponse
 			Content: vo.Content,
 		}
 	}
+
 	return article.SearchUserResponse{
-		List: l,
+		Total:   total,
+		Current: current,
+		List:    l,
 	}
 }

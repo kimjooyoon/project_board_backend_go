@@ -1,6 +1,6 @@
 package user
 
-import "project_board_backend/internal/user/domain"
+import "github.com/kimjooyoon/project_board_backend_go/internal/user/domain"
 
 type QueryService interface {
 	Search(name string) (*domain.Account, error)
