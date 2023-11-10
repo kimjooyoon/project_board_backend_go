@@ -6,4 +6,5 @@ import (
 
 func ProviderArticleServer() controller.ArticleController {
 
+	return nil
 }

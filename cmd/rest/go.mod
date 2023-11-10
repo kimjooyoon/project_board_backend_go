@@ -1,8 +1,11 @@
-module github.com/kimjooyoon/project_board_backend_go/rest
+module github.com/kimjooyoon/project_board_backend_go/cmd/rest
 
 go 1.21.0
 
-require github.com/gin-gonic/gin v1.9.1
+require (
+	github.com/gin-gonic/gin v1.9.1
+	github.com/kimjooyoon/project_board_backend_go v0.0.0-20231110152827-d032b0eb1118
+)
 
 require (
 	github.com/bytedance/sonic v1.10.2 // indirect
@@ -15,7 +18,6 @@ require (
 	github.com/go-playground/validator/v10 v10.16.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/kimjooyoon/project_board_backend_go v0.0.0-20231110143353-448094f896e2 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
