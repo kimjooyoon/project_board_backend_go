@@ -2,8 +2,8 @@ package usecase
 
 import (
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
-	"github.com/kimjooyoon/project_board_backend_go/internal/article/repo"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/repo"
 )
 
 var _ article.QueryService = (*articleQueryUseCase)(nil)

@@ -1,10 +1,10 @@
 package rest
 
 import (
-	"project_board_backend/pkg/app/article"
-	"project_board_backend/pkg/app/article/controller"
-	"project_board_backend/pkg/app/article/controller/request"
-	"project_board_backend/pkg/app/article/controller/response"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller/request"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller/response"
 )
 
 var _ controller.ArticleController = (*ArticleRestQueryController)(nil)

@@ -1,9 +1,9 @@
 package usecase
 
 import (
-	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/repo"
+	mocksrepo "github.com/kimjooyoon/project_board_backend_go/mocks/github.com/kimjooyoon/project_board_backend_go/pkg/app/article/repo"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	"github.com/stretchr/testify/mock"

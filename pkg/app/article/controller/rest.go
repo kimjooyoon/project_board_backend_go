@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"project_board_backend/pkg/app/article/controller/request"
-	"project_board_backend/pkg/app/article/controller/response"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller/request"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller/response"
 )
 
 type ArticleController interface {

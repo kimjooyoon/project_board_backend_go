@@ -3,8 +3,7 @@
 package mocks_repo
 
 import (
-	domain "project_board_backend/internal/article/domain"
-
+	domain "github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
 	mock "github.com/stretchr/testify/mock"
 )
 
@@ -22,10 +21,14 @@ func (_m *MockArticleQuery) EXPECT() *MockArticleQuery_Expecter {
 }
 
 // FindByName provides a mock function with given fields: name
-func (_m *MockArticleQuery) FindByName(name string) []domain.Article {
+func (_m *MockArticleQuery) FindByName(name string) ([]domain.Article, int) {
 	ret := _m.Called(name)
 
 	var r0 []domain.Article
+	var r1 int
+	if rf, ok := ret.Get(0).(func(string) ([]domain.Article, int)); ok {
+		return rf(name)
+	}
 	if rf, ok := ret.Get(0).(func(string) []domain.Article); ok {
 		r0 = rf(name)
 	} else {
@@ -34,7 +37,13 @@ func (_m *MockArticleQuery) FindByName(name string) []domain.Article {
 		}
 	}
 
-	return r0
+	if rf, ok := ret.Get(1).(func(string) int); ok {
+		r1 = rf(name)
+	} else {
+		r1 = ret.Get(1).(int)
+	}
+
+	return r0, r1
 }
 
 // MockArticleQuery_FindByName_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'FindByName'
@@ -55,12 +64,12 @@ func (_c *MockArticleQuery_FindByName_Call) Run(run func(name string)) *MockArti
 	return _c
 }
 
-func (_c *MockArticleQuery_FindByName_Call) Return(_a0 []domain.Article) *MockArticleQuery_FindByName_Call {
-	_c.Call.Return(_a0)
+func (_c *MockArticleQuery_FindByName_Call) Return(_a0 []domain.Article, _a1 int) *MockArticleQuery_FindByName_Call {
+	_c.Call.Return(_a0, _a1)
 	return _c
 }
 
-func (_c *MockArticleQuery_FindByName_Call) RunAndReturn(run func(string) []domain.Article) *MockArticleQuery_FindByName_Call {
+func (_c *MockArticleQuery_FindByName_Call) RunAndReturn(run func(string) ([]domain.Article, int)) *MockArticleQuery_FindByName_Call {
 	_c.Call.Return(run)
 	return _c
 }
