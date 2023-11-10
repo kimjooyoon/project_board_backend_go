@@ -1,7 +1,7 @@
 package server
 
 import (
-	"project_board_backend/pkg/app/article/controller"
+	"github.com/kimjooyoon/project_board_backend_go/pkg/app/article/controller"
 )
 
 func ProviderArticleServer() controller.ArticleController {
