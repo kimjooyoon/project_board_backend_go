@@ -3,7 +3,7 @@ package usecase
 import (
 	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
 	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
-	"github.com/kimjooyoon/project_board_backend_go/internal/infrastructure/out/maria/article/query"
+	"github.com/kimjooyoon/project_board_backend_go/internal/infrastructure/article/out/mariadb/query"
 )
 
 var _ article.QueryService = (*articleQueryUseCase)(nil)

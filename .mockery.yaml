@@ -5,6 +5,6 @@ packages:
       all: True
       recursive: True
       filename: "mock_{{.InterfaceName}}.go"
-      dir: "internal/mocks/infrastructure/out/maria/article/query"
+      dir: "internal/mocks/infrastructure/article/out/mariadb/query"
       mockname: "Mock{{.InterfaceName}}"
       outpkg: "mocks_{{.PackageName}}"
