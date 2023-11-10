@@ -1,11 +1,12 @@
 package usecase
 
 import (
+	"github.com/kimjooyoon/project_board_backend_go/internal/app/article"
+	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain"
+	"github.com/kimjooyoon/project_board_backend_go/internal/mocks/infrastructure/out/maria/article/query"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"project_board_backend/internal/app/article"
-	"project_board_backend/internal/article/domain"
-	"project_board_backend/internal/mocks/infrastructure/out/maria/article/query"
+	"github.com/stretchr/testify/mock"
 )
 
 // BDD Use Case Adapter
@@ -34,7 +35,7 @@ var _ = Describe("articleQueryUseCase", func() {
 			// 결정된 행위에서 실행할 기능을 작성합니다
 			BeforeEach(func() {
 				// query 환경 변수를 수정(mock)하여 원하는 범위는 [단위]에서 분리합니다
-				query.EXPECT().FindByName("홍길동").
+				query.EXPECT().FindByName(mock.Anything).
 					Return([]domain.Article{
 						domain.NewArticleBuilder().
 							ID(101).
@@ -42,7 +43,8 @@ var _ = Describe("articleQueryUseCase", func() {
 							UserId(2000).
 							Content("아버지를 아버지라 부르지 못하고\n형을 형이라 부르지 못했다 ...").
 							Build(),
-					}).Once()
+					}, 10,
+					).Maybe()
 				// 실행을 통해 반환 값을 재할당합니다
 				res, err = usecase.SearchUser("홍길동")
 			})

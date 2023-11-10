@@ -1,7 +1,7 @@
 package domain
 
 import (
-	"project_board_backend/internal/article/domain/article_vo"
+	"github.com/kimjooyoon/project_board_backend_go/internal/article/domain/article_vo"
 	"strconv"
 )
 

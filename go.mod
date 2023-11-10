@@ -1,4 +1,4 @@
-module project_board_backend
+module github.com/kimjooyoon/project_board_backend_go
 
 go 1.21
 

@@ -17,7 +17,9 @@ type SaveUserRequest struct {
 }
 
 type SearchUserResponse struct {
-	List []Article `json:"list"`
+	Total   int       `json:"total"`
+	Current int       `json:"current"`
+	List    []Article `json:"list"`
 }
 
 type Article struct {
